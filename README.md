@@ -1,43 +1,93 @@
 # docker-alpine-compare
 Compare the Docker Alpine Image with some others in different contexts. 
 
-Prerequisites: Docker, Maven3, Java8
+**Prerequisites**: Docker, Maven3, Java8
 
-Build Maven Project:
+**Build Maven Project**:
+cd into folder where pom.xml is
+```
+mvn clean install 
+```
+or
+```
+mvn package
+```
 
-Run Spring Boot App:
+**Run Spring Boot App**:
+cd into folder where pom.xml is
+```
+mvn spring-boot:run
+localhost:8080/
+```
 
-List Docker Images:
+**List Docker Images**:
+```
+docker images
+```
 
-List Docker Containers:
+**List Docker Containers**:
+```
+docker ps
+```
 
-Build Docker Image:
+**Build Docker Image**:
+cd into folder where dockerfile is
+```
+docker -t build imagename .
+```
 
-Run Docker Container:
+**Run Docker Container**:
+forward ports 8080:8080 on VM Client
+```
+docker run -p 8080:8080 imagename
+localhost:8080/
+```
 
+**Examples**: 
 
-Examples: 
+**Build Alpine Image**:
+cd into folder 'alpine' where dockerfile is
+```
+docker -t build alpine .
+```
 
-Build Alpine Image:
-
-
-Build Alpine OpenJDK8 Spring hello-world Image:
+**Build Alpine OpenJDK8 Spring hello-world Image**:
+cd into folder 'alpine-openjdk8-spring' where dockerfile and pom.xml is
+```
+mvn clean install 
+docker -t build alpineopenjdk8spring .
+```
 
 
 ![image comparison table](/images/image-compare-table.png)
 
+
+
 ![image comparison terminal](/images/image-compare-terminal.png)
 
 
-More Useful Docker Commands:
 
-Start Container:
+**More Useful Docker Commands**:
 
-Stop Container:
+**Start Container**:
+```
+docker start containerid
+```
 
-Remove all Containers:
+**Stop Container**:
+```
+docker stop containerid
+```
 
-Remove all unused Containers and Dangling Images:
+**Stop all Containers**:
+```
+docker stop $(docker ps -aq)
+```
+
+**Remove all unused Containers and Dangling Images**:
+```
+docker system prune -a
+```
 
 
 
