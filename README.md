@@ -25,10 +25,8 @@ Build Alpine OpenJDK8 Spring hello-world Image:
 
 
 ![image comparison table](/images/image-compare-table.png)
-Format: ![Alt Text](url)
 
 ![image comparison terminal](/images/image-compare-terminal.png)
-Format: ![Alt Text](url)
 
 
 More Useful Docker Commands:
