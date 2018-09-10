@@ -1,7 +1,7 @@
 # docker-alpine-compare
 Compare the Docker Alpine Image with some others in different contexts. 
 
-Compare Alpine, Debian, w/ openJDK8 and w/ Spring.
+Alpine, Debian, w/ OpenJDK8 and w/ Spring.
 
 **Prerequisites**: Docker, Maven3, Java8
 
